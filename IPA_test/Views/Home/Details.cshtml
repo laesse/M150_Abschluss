@@ -1,0 +1,36 @@
+﻿@model IPA_test.Models.DetailsViewModel
+
+@{
+    ViewData["Title"] = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div>
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="@Model.PrimaryImage" class="d-block w-100" alt="primary_img">
+                </div>
+                @foreach (var src in Model.Images)
+                {<div class="carousel-item">
+                        <img src="@src" class="d-block w-100" alt="img">
+                    </div>
+                }
+            </div>
+
+            <h1>@Model.Id</h1>
+            <div class="text-left">@Model.DetailText</div>
+            <form>
+                <div class="input-group input-daterange">
+                    <input type="text" class="form-control" value="2012-04-05">
+                    <div class="input-group-addon">bis</div>
+                    <input type="text" class="form-control" value="2012-04-19">
+                </div>
+            </form>
+            
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index" class="btn btn-primary">Zurück</a>
+    </div>

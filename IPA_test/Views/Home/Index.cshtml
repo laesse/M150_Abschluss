@@ -1,0 +1,26 @@
+﻿@model IndexViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <div class="text-center">
+        <div class="container">
+            <div class="row">
+                @foreach (var house in Model.Houses)
+                {
+                    <div class="col-sm">
+                        <div class="card" style="width: 18rem;">
+                            <img src="@house.Images.FirstOrDefault(i => i.IsThub).Src" class="card-img-top" alt="haus1">
+                            <div class="card-body">
+                                <p class="card-text">@house.Name</p>
+                                <h5 class="card-title">@house.Street</h5>
+                                @Html.ActionLink("Details", "Details", "Home", new { Id = house.ID} , new { @class = "btn btn-primary" })
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+
+    </div>
