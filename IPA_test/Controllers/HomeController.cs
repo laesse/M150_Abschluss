@@ -29,7 +29,11 @@ namespace IPA_test.Controllers
             return View(vm); 
         }
 
-        public IActionResult Privacy()
+        public IActionResult WhoWeAre()
+        {
+            return View();
+        }
+        public IActionResult Contact()
         {
             return View();
         }
